@@ -3,3 +3,5 @@
 
 
 + https://gweb.wra.gov.tw/Hydroinfo/ExDoc/%E6%B0%B4%E6%96%87%E5%8A%A0%E5%80%BC%E8%B3%87%E6%96%99%E9%81%8B%E7%AE%97%E8%A6%8F%E5%89%87%E8%AA%AA%E6%98%8E.pdf
++ 整點時雨量與連續60分鐘之時雨量
+   + https://hwdes.eu.org/p/xpvAgs
