@@ -74,6 +74,13 @@
   |23|22:01～23:00|0|
   |24|23:01～24:00|0|
 
+<div align="center">
+
+<img src="https://github.com/Emilytear1205/DATANOTE/blob/main/20210107%20%E6%99%82%E9%9B%A8%E9%87%8F.jpg" width = "600" height = "600" alt="2021一月份日雨量" align=center />
+
+</div>
+
+
 日雨量刻度分布
 |刻度(觀測時間)|區間|降雨量(單位:mm)|
 |:-----:|-----|:-----:|
