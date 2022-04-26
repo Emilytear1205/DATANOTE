@@ -109,6 +109,8 @@
 |30|2021/01/30 00:01～24:00|0| 
 |31|2021/01/31 00:01～24:00|0| 
 
+<img src="https://github.com/Emilytear1205/DATANOTE/blob/main/2021%E4%B8%80%E6%9C%88%E4%BB%BD%E6%97%A5%E9%9B%A8%E9%87%8F.jpg" width = "200" height = "200" alt="图片名称" align=center />
+
 年雨量刻度分布
 
 |刻度(觀測時間)|區間|降雨量(單位:mm)|
