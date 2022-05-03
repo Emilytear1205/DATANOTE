@@ -146,8 +146,7 @@
 |11|70|十一月份累積降水量|
 |12|63|十二月份累積降水量|
 
-<img src="https://github.com/Emilytear1205/DATANOTE/blob/main/2021%20%E6%9C%88%E9%9B%A8%E9%87%8F.jpg
-  " width = "600" height = "600" alt="2021一月份日雨量" align=center />
+<img src="https://github.com/Emilytear1205/DATANOTE/blob/main/2021%20%E6%9C%88%E9%9B%A8%E9%87%8F.jpg" width = "600" height = "600" alt="2021一月份日雨量" align=center />
   
 ----
 
