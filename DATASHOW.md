@@ -152,7 +152,7 @@ ylabel('雨量 (mm)');	% y 軸的說明文字
 %   Name: About_me_window 
 %   Copyright:  
 %   Author: 許芯慈
-%   Version: v20220501a
+%   Version: v20220523a
 %   Description: 日雨量長條圖
 %   
 %--------------------------------------------------------------------------
