@@ -7,7 +7,7 @@
     </p>
   
   <p align="right">
-    指導老師：葉秀柏
+    指導老師：陳建志教授
     </p>
   
   <p align="right">
