@@ -94,7 +94,7 @@ index=0;
 Target_Weathers.OneDay.DataHeader={'DayNumber_From','DayNumber_To','日累積降水量(mm)'};
 % 此處用到datenum將輸入的起訖日期轉換成"天"(距離西元0年1月0日的天數)，便於迴圈的變換
 for i_datenumber=datenum(start_date_str):datenum(end_date_str)
-        % 把轉換成秒的起訖日期，再次轉換回西園日期(字串)
+        % 把轉換成秒的起訖日期，再次轉換回西元日期(字串)
         date_str=datestr(i_datenumber,'yyyymmdd');
         % 設定檔案路徑(根據需要變更)
         mat_file_name=[station_id,'\',target_year,'\',date_str(5:6),'\',date_str,'_',station_id,'.mat'];
