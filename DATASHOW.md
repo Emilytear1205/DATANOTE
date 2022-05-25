@@ -145,6 +145,87 @@ ylabel('雨量 (mm)');	% y 軸的說明文字
 
 
 ```
+# 2022年 中壢測站月雨量
+`
+
+%--------------------------------------------------------------------------
+%   Name: About_me_window 
+%   Copyright:  
+%   Author: 許芯慈
+%   Version: v20220501a
+%   Description: 日雨量長條圖
+%   
+%--------------------------------------------------------------------------
+
+clear;clc;close all
+%--------------------------------------------------------------------------
+% 繪製2021年1月份 中壢測站之日雨量長條圖
+% 先用爬蟲程式碼將資料從觀測站下載之後整理成.mat檔案，並且繪製
+
+% 測站名稱(此處為觀測站資料所設定的代號)
+station_id='C0C700';
+station_name='中壢';
+month_data='月雨量資料';
+%目標年
+target_year='2020';
+    % 設定輸出的資料中，變數的名稱，有助於得知輸出的起始和結束日期是否和自己預期的相同
+    Target_Weathers.StationID=station_id;
+    Target_Weathers.StationName=station_name;
+
+% 將時雨量加總，算出日雨量並輸出成長條圖
+
+index=0;
+% 在輸出的資料中加上新的變數--DataHeader(標題)
+Target_Weathers.OneMonth.DataHeader={'Target_Month','月累積降水量(mm)'};
+for i_month= 1:12      
+        % 設定檔案路徑(根據需要變更)
+        mat_file_name=[month_data,'\',station_id,'\',target_year,'\',target_year,'_',station_id,'.mat'];
+        % 如果存在同樣的檔案(名稱)，表示先前下載的資料存在對的路徑
+        if (exist(mat_file_name,'file')==2)
+            % 將轉換成秒的日期輸入進Target_Weathers.Onemonth.Data中的第1行，第2行的資料則是
+            index=index+1;
+            Target_Weathers.OneMonth.Data(index,1)=i_month;
+            % 輸入目標檔案
+            temp_data=load(mat_file_name);
+            
+            % 雨量長條圖
+            temp_data2=temp_data.Weather.Data(:,19);     % 我們想要的雨量資料是位在資料中的第19行
+            % 觀測站所標示的 T 為微量的意思，此處將之設定為0.0
+            temp_data2=strrep(temp_data2,'T','0.0');
+            % 將資料中的字串(str)轉成double(雙經度浮點型，也是數值的一種，故可以放入矩陣)，此處運用到str2double
+            temp_data2=str2double(temp_data2);
+            % 如果12個月中有4個月都NaN就當作整天NaN，如果8小時以下就拿有數值的算總和
+            if (sum(isnan(temp_data2)) >= 4)
+                Target_Weathers.OneMonth.Data(i_month,2)=NaN;    
+            % 如果一個檔案的資料矩陣有12列，表示有順利讀取到12個月的雨量資料，此時可以繼續進行程式
+            elseif (length(temp_data2) == 12)
+                % nan的資料視為空矩陣
+                temp_data2(isnan(temp_data2))=[];
+                %  判斷temp_data2數列是否為空，如果是，則將sum(temp_data2)放入空格中
+                if ~isempty(temp_data2)
+                    Target_Weathers.OneMonth.Data(i_month,2)=temp_data2(i_month,1);
+                else
+                    Target_Weathers.OneMonth.Data(i_month,2)=NaN;  
+                end
+            else
+                Target_Weathers.OneMonth.Data(i_month,2)=NaN;            
+            end
+
+        end
+end
+figname=[station_id,'測站'];
+figure('NumberTitle', 'off', 'Name',figname);
+x=1:12;
+bar(x,Target_Weathers.OneMonth.Data(:,2));
+title('月累積降水量(mm)')
+set(gca,'XTick',1:1:12);
+xlabel('時間 (月)');	% x 軸的說明文字
+ylabel('雨量 (mm)');	% y 軸的說明文字
+
+
+
+`
+
 
 # CWB月雨量資料抓取
 
