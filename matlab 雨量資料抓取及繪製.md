@@ -244,7 +244,6 @@ ylabel('雨量 (mm)');	% y 軸的說明文字
 clear;clc;close all
 %--------------------------------------------------------------------------
 % 抓取CWB之月雨量資料
-% 先用爬蟲程式碼將資料從觀測站下載之後整理成.mat檔案，並且繪製
 station_id='C0C700';
 station_name='中壢';
 station_name_urlencode=urlencode(urlencode(station_name));%不知道為什麼氣象局要urlencode兩次...
